@@ -91,22 +91,30 @@ def filtro_por_categoria_eda_country(choose, df):
     st.pyplot(fig)
 
 def filtro_por_produtos_por_super_categorias_eda_country(choose, df):
+#     fig = plt.figure(figsize=(15, 15))
+#     filtro = df.loc[df.filha_1_name == choose]
+#     order_filt = filtro.OfferTitle.value_counts().iloc[:10].index
+#     ylabels = pd.Series(order_filt).apply(lambda x: x[:20]+'...')
+#     #order_filt = filtro.OfferTitle.value_counts().index
+#     sns.set_style("darkgrid", {"axes.facecolor": ".9"})
+#     sns.countplot(y='OfferTitle', hue='CountryCode', data=filtro, order=order_filt)
+#     plt.yticks(ticks = np.arange(0,10), labels = ylabels)
+#     plt.title('Most Popular Category Products per Country\n', fontsize = 26)
+#     plt.xlabel('Count', fontdict={'fontsize':17})
+#     plt.ylabel('Subcategories', fontdict={'fontsize':17})
+#     plt.tick_params(axis='both', which='major', labelsize=15)
+#     plt.legend(prop={"size":18}, title = 'Country', title_fontsize =18)
+    
+    
     fig = plt.figure(figsize=(15, 15))
     filtro = df.loc[df.filha_1_name == choose]
     order_filt = filtro.OfferTitle.value_counts().iloc[:10].index
-    ylabels = pd.Series(order_filt).apply(lambda x: x[:20]+'...')
     #order_filt = filtro.OfferTitle.value_counts().index
-    sns.set_style("darkgrid", {"axes.facecolor": ".9"})
     sns.countplot(y='OfferTitle', hue='CountryCode', data=filtro, order=order_filt)
-    plt.yticks(ticks = np.arange(0,10), labels = ylabels)
-    plt.title('Most Popular Category Products per Country\n', fontsize = 26)
-    plt.xlabel('Count', fontdict={'fontsize':17})
-    plt.ylabel('Subcategories', fontdict={'fontsize':17})
-    plt.tick_params(axis='both', which='major', labelsize=15)
-    plt.legend(prop={"size":18}, title = 'Country', title_fontsize =18)
-
-
+    plt.ylabel('Sub Categorias')
+    plt.xlabel('Contagem')
     st.pyplot(fig)
+
 
 def lista_produtos_sub_categorias():
     return
