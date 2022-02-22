@@ -23,6 +23,9 @@ def loading_data():
 def item_exploration_page():
     st.title('Comparação de Itens')
     alemanha, france, italia = loading_data()
+    alemanha.columns = ['Antecedentes', 'Consequentes']
+    france.columns = ['Antecedentes', 'Consequentes']
+    italia.columns = ['Antecedentes', 'Consequentes']
 
     pais_selecionado = st.selectbox('Selecione um pais:', ['França','Alemanha','Itália'])
 
@@ -38,10 +41,10 @@ def item_exploration_page():
     elif pais_selecionado == 'Itália':
         df = italia
 
-    select_item = st.selectbox('Selecione um item para ver seu comparativo: ', pd.Series(df.antecedents_offertitle.unique()).sort_values())
+    select_item = st.selectbox('Selecione um item para ver seu comparativo: ', pd.Series(df.Antecedentes.unique()).sort_values())
 
     if st.button('Gerar'):
-        df.columns = ['Antecedentes', 'Consequentes']
+        #df.columns = ['Antecedentes', 'Consequentes']
         st.table(df[df.Antecedentes == str(select_item)].Consequentes)
 
 
