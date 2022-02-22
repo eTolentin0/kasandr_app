@@ -68,7 +68,7 @@ def loading_dicionarios():
 
 def recebe_categorias_retorna_produtos(categorias_selecionadas, dicionario_categorias, df):
     for categoria in categorias_selecionadas:
-        st.write('Porque você tem interesse em --', str(categoria), '-- achamos que gostaria destes produtos: \n')
+        st.write('Porque você tem interesse em ', '**_'+str(categoria)+'_**', ' achamos que gostaria destes produtos: \n')
         for cat in dicionario_categorias[categoria]:
             #         print('Porque você tem interesse em ', categoria, 'achamos que gostaria destes produtos em: ',cat)
             if len(dicionario_categorias[categoria]) == 1:
