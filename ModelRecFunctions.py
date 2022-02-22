@@ -225,7 +225,8 @@ def print_streamlit(cat_suggestions, original, cat_name, offer, offer_cat, produ
 
     if len(cat_suggestions['Others']) > 0:
         st.write('\nPorque você clicou na seção', '**_Others_**', "em: \n")
-        for item in pd_originals[pd_originals.Category == c][:5].Offer.values:
+	for item in pd_originals[:5].Offer.values:
+        #for item in pd_originals[pd_originals.Category == c][:5].Offer.values:
             st.write('-', retorna_item(item, offer))
         #st.write(print_offers_name_on_streamlit(original[:5], offer))
         # for i in range(5):
