@@ -2,7 +2,7 @@ implicit==0.5.2
 matplotlib
 numpy
 pandas
-scipy==1.8.0
+scipy
 seaborn
 streamlit
 surprise==0.1
