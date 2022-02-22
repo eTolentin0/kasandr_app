@@ -12,10 +12,10 @@ def loading_data():
     alemanha = pd.read_csv(path_de)
 
     path_fr = origin_path + et_path + '.csv/.novo/antecedents_to_consequents_france.csv'
-    france = pd.read_csv(path_de)
+    france = pd.read_csv(path_fr)
 
     path_it = origin_path + et_path + '.csv/.novo/antecedents_to_consequents_italia.csv'
-    italia = pd.read_csv(path_de)
+    italia = pd.read_csv(path_it)
 
     return alemanha, france, italia
 
